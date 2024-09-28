@@ -1,27 +1,49 @@
-# Challenge
+# Raya Challenge
 
-## Overview
+A challenge for a DevOps Internship.
 
-This repository contains a simple web application with two main components:
+## Table of Contents
 
-1. **API**: Written in Laravel PHP, the API serves as the backend for the application and listens on port 8000.
-2. **Client**: Developed using Nuxt.js, the client is the frontend of the application and listens on port 3000.
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
 
-### Environment Variables
+## Prerequisites
 
-- **API Directory**: Take a look at the `.env` file in the API directory. It should contain the necessary credentials to connect to the database.
+Before you begin, ensure you have met the following requirements:
 
-  ```env
-    DB_CONNECTION=mysql
-    DB_HOST=db
-    DB_PORT=3306
-    DB_DATABASE=bookapi
-    DB_USERNAME=app
-    DB_PASSWORD=password
+- Docker
+- Docker Compose
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/ahmaddfathyy/RayaGate-Challenge
+   cd RayaGate-Challenge
+   ```
+
+2. Create a certs directory and generate a self-signed SSL certificate:
+
+  ```bash
+  mkdir -p ./certs
+  openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./certs/nginx-selfsigned.key -out ./certs/nginx-selfsigned.crt
   ```
 
-- **Client Directory**: Check the `.env` file in the Client directory. It should contain the connection string to connect to the API.
+3. Run the application using Docker Compose:
 
-  ```env
-    VITE_API_URL=http://api:8000
+  ```bash
+  docker-compose up --build
   ```
+
+## Usage
+
+Access the application at:
+
+- HTTP: http://localhost
+- HTTPS: https://localhost (self-signed certificate warning may appear)
+
+## Screenshots
+https://github.com/ahmaddfathyy/RayaGate-Challenge/sc/sc.png
