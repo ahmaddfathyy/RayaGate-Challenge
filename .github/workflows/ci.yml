@@ -1,0 +1,39 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      docker:
+        image: docker:20.10.16
+        options: --privileged
+        ports:
+          - 80:80
+          - 443:443
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Build and push API image
+      run: |
+        cd API
+        # docker build -t /laravel_api .
+        # docker push /laravel_api
+        # a place holder for trivy scan and check
+
+    - name: Build and push Client image
+      run: |
+        cd Client
+        # docker build -t /nuxt_client .
+        # docker push /nuxt_client
+        # a place holder for trivy scan and check
