@@ -27,13 +27,13 @@ jobs:
     - name: Build and push API image
       run: |
         cd api
-        docker build -t /laravel_api .
+        # docker build -t /laravel_api .
         # docker push /laravel_api
         # a place holder for trivy scan and check
 
     - name: Build and push Client image
       run: |
         cd client
-        docker build -t /nuxt_client .
+        # docker build -t /nuxt_client .
         # docker push /nuxt_client
         # a place holder for trivy scan and check
