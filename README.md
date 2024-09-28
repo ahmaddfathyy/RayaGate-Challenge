@@ -46,4 +46,4 @@ Access the application at:
 - HTTPS: https://localhost (self-signed certificate warning may appear)
 
 ## Screenshots
-https://github.com/ahmaddfathyy/RayaGate-Challenge/sc/sc.png
+![screenshot of the working app](./sc/sc.png)
